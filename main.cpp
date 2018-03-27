@@ -1,4 +1,4 @@
-//Author:
+  //Author:
 #include <iostream>
 
 using namespace std;
@@ -22,7 +22,6 @@ int main()
   int row;
   int column;
   bool playing = true; //Continue playing by default
-
   do
   {
     cout<<turn<<"'s turn.\n";
@@ -43,22 +42,42 @@ int main()
     //TODO: Place the piece and swap turns
     //Outline
     //1. When neither of the (above) if nor else if statements are true, then...
+    else
+    {
     //1-A.  Assign the board location of row and column to the value of turn
+      board[row][column] = turn;
+    }
+
     //1-B.  When turn has the value 'X', then...
+    if(turn == 'X')
+    {
     //1-B-1.  turn should be assigned the value 'O'
+      turn = 'O';
+    }
     //1-C.  In any other case, then...
+    else
+    {
     //1-C-1.  turn should be assigned the value 'X'
-    
+      turn = 'X';
+    }
     cout<<"\nBOARD\n-----\n";
     //TODO: Print the current board
     //Outline
     //1. Traverse through each row, calling the current row r
+    for( int r = 0; r <= 2; r++ )
+    {
     //1-A. Traverse through each column in row r, calling the current column c
+      for( int c = 0; c <= 2; c++ )
+      {
     //1-A-1.  Display the value of the board at location of r and c
+        cout<<board[r][c];
     //1-A-2. Display a space
+        cout<<' ';
+      }
     //1-B. Display an newline to move to the next row of the board
-    
-  }while( playing );
+      cout<<"\n";
+    }
+  }while( playing == true);
 
   cout<<"Goodbye!\n";
 
